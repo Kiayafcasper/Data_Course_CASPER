@@ -1,0 +1,33 @@
+# list all csv in directory:
+csv_files <- 
+list.files(path = "Data", pattern = ".csv", all.files = TRUE, 
+           full.names = TRUE, recursive = TRUE)
+
+#how many files?:
+length(csv_files)
+
+#open file wingspan_vs_mass:
+wing <- list.files(path = "Data", pattern = "wingspan_vs_mass.csv", 
+           all.files = TRUE, full.names = TRUE)
+df <- read.csv(wing)
+
+#what are the first 5 lines of data?
+head(df)
+
+# list all files in direcory starting with "b"
+b <- list.files(path = "Data", pattern = "^b", all.files = TRUE, 
+           full.names = TRUE, recursive = TRUE, include.dirs = TRUE)
+
+#read/display top line of each file starting with "b"
+for (file in b) {cat("\n", file, "\n")
+  print(readLines(file,n=1))
+}
+
+#repeat for all files ending in csv:
+csv <- list.files(path = "Data", pattern = "\\.csv", all.files = TRUE, 
+             full.names = TRUE, recursive = TRUE)
+  
+for (file in cvs) {cat("\n", file, "\n")
+  print(readLines(file,n=1))
+  
+  

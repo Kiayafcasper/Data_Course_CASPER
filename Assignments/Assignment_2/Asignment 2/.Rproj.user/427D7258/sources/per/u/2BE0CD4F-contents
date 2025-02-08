@@ -1,0 +1,7 @@
+
+csv_files <- list.files( path = "Data", pattern = ".csv", 
+                        all.files = TRUE, 
+           full.names = TRUE, recursive = TRUE, 
+           ignore.case = TRUE)
+list(csv_files)
+getwd()
