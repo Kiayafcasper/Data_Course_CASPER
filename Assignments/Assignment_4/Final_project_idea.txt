@@ -1,0 +1,10 @@
+
+For my final project, I would love to look at data collected on animals, studying 
+either phenotypic, or behavioral plasticity. I am open to any animal or behavioral 
+data I can find, because I know finding this type of data will be extremely difficult.
+I have spoken with my evolution professor, Jessica Cusick, and she said she may
+I have data that I can use based on ant colony behavior. I am currently scheduling a 
+meeting with her in order to see if I could use her data for my project.
+Depending on the data I can get my hands on, I would love to run statistical
+analysis to determine if certain behaviors are caused by certain external 
+environmental pressures.
