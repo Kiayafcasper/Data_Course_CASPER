@@ -1,0 +1,75 @@
+---
+title: "R_markdown_practice"
+output: html_document:
+  code_folding: hide
+  toc:yes
+date: "`r Sys.Date()`"
+---
+
+```{r setup, include=FALSE}
+# look up rmd formats to add! Might be a package?
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library( tidyverse)
+library(palmerpenguins)
+library(easystats)
+library( equatiomatic)
+library(pander)
+library(broom)
+library(kableExtra)
+library(plotly)
+theme_set(theme_minimal())
+```
+
+## R Markdown
+ 
+```{r}
+# control alt I for R chunk
+# look up markdown preview for help
+#![](https://www.shutterstock.com/image-vector/penguin-flat-vector-illustration-on-600nw-2459383763.jpg)
+#or save image:
+#knitr::include_graphics("./Pen.jpeg")
+```
+Here's a look at the data set
+```{r}
+penuins %>% glimpse
+```
+Steps of data science:
+1. import
+2. clean
+3. visualize
+4. model
+5. report
+
+## Plot
+```{r}
+p <- penguins %>%
+  ggplot( mapping = aes( x = species, y = body_mass_g, color = sex))+
+  geom_point()+
+  geom_boxplot()+
+  geom_jitter(color = "black", alpha = 0.25, width = 0.2)+
+  labs( x = "Species", y = "Body Mass (g)")
+# make it so you can zoom in on graph
+plotly:: ggplotly(p)
+```
+Here we see blah blah blah...
+
+```{r}
+mod <- 
+penguins %>% 
+  filter(!is.na = sex) %>%
+  glm(data = ., formula = body_mass_g ~ sex * species)
+```
+```{r}
+# use broom: Turns model output into a dataframe to be used
+mod %>% tidy
+# but I want it prettier: use kableExtra
+# "hover makes the sight get highlighted when mouse is over it.
+tidy%>% kable %>%
+  kable_classic(lightable_options = "hover")
+```
+he equation fir our model is:
+
+```{r}
+equatiomatic::extract_eq(mod)
+```
+

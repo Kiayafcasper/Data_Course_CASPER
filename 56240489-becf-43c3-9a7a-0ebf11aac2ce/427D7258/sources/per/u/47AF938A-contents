@@ -1,0 +1,29 @@
+# mapping:
+  # ggmap
+  # register_google(key = ...sys.getenv("APIKEY"))
+  # need longitude/latitude for mapping
+  # plot over image from google maps
+  # can use plotly to make the plot interactive!
+# or leaflet package:
+  # You can add pop ups with "addPopups"
+  # harder to modify map to your liking
+
+
+# rentrez: a way to search
+  # use NCBI to give rentrez search data (r hand side)
+
+# new modeling:
+install.packages("lmerTest")
+library(lmerTest)
+ # can do x + (x|y) (y is nested in x)
+ # different type of glm
+
+# look up shiny app for maybe making an app?
+  #shinyui editor
+
+# creating links in profile page: look at Dr. Zahn's index
+
+# use lubridate!
+# use climate
+#https://link.springer.com/article/10.1007/s10980-024-01915-y#Sec8:
+#maybe dataset?

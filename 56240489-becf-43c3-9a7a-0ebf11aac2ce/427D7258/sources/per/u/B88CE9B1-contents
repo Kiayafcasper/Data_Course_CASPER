@@ -1,0 +1,6 @@
+install.packages("climate")
+library(climate)
+ns = nearest_stations_ogimet(country = "United+States", point = c(-112, 46), 
+                        no_of_stations = TRUE, add_map = TRUE)
+?nearest_stations_ogimet()
+  

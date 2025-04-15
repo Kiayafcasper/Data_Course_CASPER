@@ -1,0 +1,13 @@
+"0","# Basic scatterplot
+ggplot(data = faithful, 
+       mapping = aes(x = eruptions, y = waiting)) + 
+  geom_point()
+# Basic scatterplot
+ggplot(data = faithful, 
+       mapping = aes(x = eruptions, y = waiting)) + 
+  geom_point()
+"
+"0","# Data and mapping can be given both as global (in ggplot()) or per layer"
+"0","ggplot() + "
+"0","  geom_point(mapping = aes(x = eruptions, y = waiting),"
+"0","             data = faithful)"

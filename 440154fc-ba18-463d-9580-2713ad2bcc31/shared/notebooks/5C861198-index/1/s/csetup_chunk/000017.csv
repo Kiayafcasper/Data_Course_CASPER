@@ -1,0 +1,24 @@
+"0","rmarkdown::render(""index.Rmd"", output_format = ""html_document"")
+"
+"2","
+
+processing file: index.Rmd
+"
+"1","  |                                        "
+"1","  |                                  |   0%"
+"1","  |                                        "
+"1","  |.....                             |  14%"
+"1","           "
+"1","  |                                        "
+"1","  |..........                        |  29%"
+"1"," [setup]   "
+"1","Error in `if (options$engine != ""R"") ...`:
+! argument is of length zero
+Backtrace:
+ 1. rmarkdown::render(""index.Rmd"", output_format = ""html_document"")
+ 2. knitr::knit(knit_input, knit_output, envir = envir, quiet = quiet)
+ 3. knitr:::process_file(text, output)
+ 6. knitr:::process_group(group)
+ 7. knitr:::call_block(x)
+ 8. knitr:::fix_options(params)
+"

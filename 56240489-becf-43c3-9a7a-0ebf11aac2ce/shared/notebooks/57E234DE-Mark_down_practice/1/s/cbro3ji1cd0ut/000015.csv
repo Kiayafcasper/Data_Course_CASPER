@@ -1,0 +1,13 @@
+"0","mod <- 
+penguins %>% 
+  filter(!is.na == sex) %>%
+  glm(data = ., formula = body_mass_g ~ sex * species)
+"
+"1","[1m[33mError[39m in `filter()`:[22m
+[38;5;232m[36mℹ[38;5;232m In argument: `!is.na == sex`.[39m
+[1mCaused by error in `==.default`:[22m
+[33m![39m comparison (==) is possible only for atomic and list types
+Backtrace:
+[90m  1. [39mpenguins %>% filter(!is.na == sex) %>% ...
+[90m 16. [39m[1mbase[22m::NextMethod(.Generic)
+"

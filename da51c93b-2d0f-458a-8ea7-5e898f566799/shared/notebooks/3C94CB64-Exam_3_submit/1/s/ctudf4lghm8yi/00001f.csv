@@ -1,0 +1,6 @@
+"0","ggplot(data = datj, mapping = aes(x = years_since_burn,
+                                  y = concentration))+
+geom_smooth(model = ""auto"", se = TRUE)+
+  facet_wrap(~chem, scales = ""free_y"")
+"
+"2","Warning: [38;5;232mIgnoring unknown parameters: `model`[39m"

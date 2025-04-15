@@ -1,0 +1,7 @@
+"0","# but I want it prettier: use kableExtra
+tidy%>% kable %>%
+  kable_classic(lightable_options = ""hover"")
+"
+"2","Error in as.data.frame.default(x) : 
+  cannot coerce class ‘""function""’ to a data.frame
+"

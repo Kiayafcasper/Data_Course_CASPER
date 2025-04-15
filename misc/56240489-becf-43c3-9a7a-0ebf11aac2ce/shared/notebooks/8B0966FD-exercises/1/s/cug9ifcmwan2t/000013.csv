@@ -1,0 +1,7 @@
+"0","ggplot(mtcars2, aes(x = disp, y = mpg)) + 
+  geom_point() + 
+  geom_text_repel(aes(label = label))
+"
+"2","Error in geom_text_repel(aes(label = label)) : 
+  could not find function ""geom_text_repel""
+"

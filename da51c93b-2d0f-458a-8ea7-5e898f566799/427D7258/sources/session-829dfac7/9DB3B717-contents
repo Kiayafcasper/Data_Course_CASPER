@@ -1,0 +1,65 @@
+---
+title: "CASPER_Skills_Test_3.Rmd"
+output: html_document
+date: "2025-04-14"
+---
+1. Load and clean FacultySalaries_1995.csv file and Re-create the graph below…
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(janitor)
+library(broom)
+library(dplyr)
+library(knitr)
+dat <- read.csv("./FacultySalaries_1995.csv")%>% clean_names() %>%
+  rename("Full" = "avg_full_prof_salary") %>%
+  rename("Assoc" = "avg_assoc_prof_salary")%>%
+  rename("Assist" = "avg_assist_prof_salary") %>%
+  rename("All" = "avg_prof_salary_all") %>%
+  pivot_longer(cols = (5:7), names_to = "Rank", values_to = "Salary")
+```
+
+
+
+
+
+```{r cars}
+dat <-  dat[dat$tier != "VIIB",]
+ggplot(data = dat, mapping = aes(x = Rank, y = Salary, fill = Rank))+
+  geom_boxplot()+
+  facet_grid(~ tier)+
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+```
+
+
+
+
+2. Build an ANOVA model and display the summary output in your report.
+```{r pressure, echo=FALSE}
+anova(object = glm(data = dat, formula = Salary ~ tier + Rank + state))
+```
+
+       
+The rest of the test uses another data set. The “Juniper_Oils.csv” data. Get it loaded and take a look. Then tidy it! (show the code used for tidying in your report)
+```{r}
+datj <- read.csv("./Juniper_Oils.csv") %>% clean_names
+datj <- datj %>% pivot_longer(cols = c("para_cymene","alpha_pinene","alpha_terpineol","cedr_9_ene","alpha_cedrene","beta_cedrene","cis_thujopsene","alpha_himachalene","beta_chamigrene","cuparene","compound_1","alpha_chamigrene","widdrol","cedrol","beta_acorenol",                      "alpha_acorenol","gamma_eudesmol","beta_eudesmol","alpha_eudesmol","cedr_8_en_13_ol","cedr_8_en_15_ol","compound_2","thujopsenal"), values_to = "concentration", names_to = "chem")
+
+```
+4. Make me a graph of the following: x = yearssinceburn, y = concentration, facet chemicalID:
+```{r}
+ggplot(data = datj, mapping = aes(x = years_since_burn,
+                                  y = concentration))+
+geom_smooth(model = "auto", se = TRUE)+
+  facet_wrap(~chem, scales = "free_y")
+```
+
+5. Use a generalized linear model to find which chemicals show concentrations that are significantly (significant, as in P < 0.05) affected by “Years Since Burn”.
+````{r}
+datj$chem <- as.factor(datj$chem)
+mod <- glm(data = datj, formula = chem ~ years_since_burn + factor(chem), family = "binomial", control = list(maxit = 100))
+tidymod <- tidy(mod)
+kable(head(tidymod),format = "html", caption = "Tidy Dataframe")
+````
+
+

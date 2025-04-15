@@ -1,0 +1,8 @@
+"0","ggplot(mtcars, aes(x = disp, y = mpg)) +
+  geom_point() + 
+  geom_mark_ellipse(aes(filter = gear == 4,
+                        label = '4 gear cars'))
+"
+"2","Error in geom_mark_ellipse(aes(filter = gear == 4, label = ""4 gear cars"")) : 
+  could not find function ""geom_mark_ellipse""
+"

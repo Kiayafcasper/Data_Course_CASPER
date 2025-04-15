@@ -22,6 +22,7 @@ filter(penguins, !is.na(sex), !is.na(bill_length_mm),
   labs(title = "PENGUINS", subtitle = "I'm sorry", 
        x = "Bill Length", y = "Year" )
   
+
     
                   
                   

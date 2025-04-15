@@ -1,0 +1,9 @@
+"0","packages <- c(
+  'ggplot2',
+### Datasets
+We will use an assortment of datasets throughout the document. The purpose is 
+"
+"2","Error: unexpected symbol in:
+""### Datasets
+We will""
+"

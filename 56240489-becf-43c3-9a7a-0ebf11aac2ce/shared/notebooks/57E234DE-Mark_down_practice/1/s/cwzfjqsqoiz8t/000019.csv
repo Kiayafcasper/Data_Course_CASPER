@@ -1,0 +1,5 @@
+"0","# control alt I for R chunk"
+"0","# look up markdown preview for help"
+"0","#![](https://www.shutterstock.com/image-vector/penguin-flat-vector-illustration-on-600nw-2459383763.jpg)"
+"0","#or save image:"
+"0","#knitr::include_graphics(""./Pen.jpeg"")"

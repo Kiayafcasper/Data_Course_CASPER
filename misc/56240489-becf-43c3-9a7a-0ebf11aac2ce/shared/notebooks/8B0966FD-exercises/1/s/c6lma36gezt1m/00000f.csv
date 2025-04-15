@@ -1,0 +1,12 @@
+"0","ggplot(faithful, aes(x = eruptions, y = waiting)) + 
+  geom_density_2d() + 
+  geom_point()
+"
+"1","[1m[33mError[39m in `ggplot_add()`:[22m
+[38;5;232m[33m![38;5;232m Can't add `ggplot(faithful, aes(x = eruptions, y
+  = waiting))` to a [34m<ggplot>[38;5;232m object.[39m
+Backtrace:
+[90m 1. [39mggplot2:::`+.gg`(...)
+[90m 2. [39mggplot2:::add_ggplot(e1, e2, e2name)
+[90m 4. [39m[1m[94mggplot2:::ggplot_add.default([39m[22mobject, p, objectname[1m[94m)[39m[22m
+"
